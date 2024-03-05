@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class NumberGame {
+    Scanner sc = new Scanner(System.in);
+    Random r = new Random();
+    int num = r.nextInt(100) + 1; // Generate a number between 1 and 100
+    int attempts = 3;
+
+    public void input() {
+        System.out.println("A number has been generated between 1 to 100. Guess the number. You have 3 attempts.");
+    }
+
+    public void check() {
+        while (attempts > 0) {
+            int n = sc.nextInt();
+            if (n != num) {
+                System.out.println("You guessed the number incorrectly. Try again.");
+                attempts--;
+            } else {
+                System.out.println("You guessed the number correctly!");
+                return;
+            }
+        }
+        System.out.println("You have exhausted your attempts. The number was " + num);
+    }
+
+    public static void main(String[] args) {
+        NumberGame ob = new NumberGame();
+        ob.input();
+        ob.check();
+    }
+}
