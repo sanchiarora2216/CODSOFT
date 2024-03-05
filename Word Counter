@@ -1,0 +1,19 @@
+import java.util.Scanner;
+class WordCounter
+  {
+    public static void main(String[] args)
+    {
+      Scanner sc = new Scanner(System.in);
+      System.out.println("Enter a sentence: ");
+      String sentence = sc.nextLine();
+      int count = 1;
+      StringTokenizer st = new StringTokenizer(sentence);
+      String k;
+      while(st.hasMoreTokens())
+        {
+          k=st.nextToken();
+          count++;
+        }
+      System.out.println("The number of words in the sentence is: " + count);
+    }
+  }
